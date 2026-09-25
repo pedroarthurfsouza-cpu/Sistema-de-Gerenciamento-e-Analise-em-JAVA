@@ -1,4 +1,4 @@
-
+package mangalog.model;
 import java.time.LocalDate;
 
 public class ProgressoDeLeitura {
@@ -9,14 +9,11 @@ private StatusLeitura status;
 private LocalDate dataInicio;
 private LocalDate dataFim;
 
-
-
-public ProgressoDeLeitura(Obra obra, int capituloAtual, StatusLeitura status, LocalDate dataInicio, LocalDate dataFim) {
+public ProgressoDeLeitura(Obra obra) {
     this.obra = obra;
-    this.capituloAtual = capituloAtual;
-    this.status = status;
-    this.dataInicio = dataInicio;
-    this.dataFim = dataFim;
+    this.capituloAtual = 0;
+    this.status = StatusLeitura.LENDO;
+    this.dataInicio = LocalDate.now();
 }
 public Obra getObra() {
     return obra;

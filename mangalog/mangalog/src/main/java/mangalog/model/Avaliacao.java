@@ -1,3 +1,4 @@
+package mangalog.model;
 
 import java.time.LocalDate;
 
@@ -8,9 +9,11 @@ public class Avaliacao {
     private String comentario;
     private LocalDate data;
 
-    public Avaliacao(String comentario, LocalDate data, int nota, Obra obra) {
-        this.comentario = comentario;
-        this.data = data;
+    public Avaliacao(int nota, Obra obra) {
+        if (nota < 1 || nota > 5) {
+            throw new IllegalArgumentException("Nota deve ser entre 1 e 5");
+        }
+        this.data = LocalDate.now();
         this.nota = nota;
         this.obra = obra;
     }

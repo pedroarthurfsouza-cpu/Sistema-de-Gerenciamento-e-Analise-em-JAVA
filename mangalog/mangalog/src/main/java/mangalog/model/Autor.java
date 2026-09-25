@@ -1,3 +1,4 @@
+package mangalog.model;
 
 public class Autor {
 

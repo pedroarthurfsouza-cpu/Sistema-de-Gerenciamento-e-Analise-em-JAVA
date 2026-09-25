@@ -1,4 +1,4 @@
-
+package mangalog.model;
 public class Genero {
 
     private String nome;
