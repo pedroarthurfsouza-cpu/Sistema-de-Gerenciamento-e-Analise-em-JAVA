@@ -1,6 +1,12 @@
 package mangalog.app;
 import java.util.Scanner;
 
-public class Main { public static void main(String[] args) {
-        System.out.println("Bem-vindo ao MangaLog"); } 
+import mangalog.api.JikanClient;
+
+public class Main { public static void main(String[] args) throws Exception {
+        JikanClient client = new JikanClient();
+        String resultado = client.buscarBruto("naruto");
+        System.out.println(resultado);
+    
+        } 
     }
