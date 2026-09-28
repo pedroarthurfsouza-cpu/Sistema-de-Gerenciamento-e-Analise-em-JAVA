@@ -12,11 +12,10 @@ public class Obra {
     private String idExterno;
     private ArrayList<Avaliacao> avaliacoes = new ArrayList<>();
 
-    public Obra(String titulo, TipoObra tipo, Autor autor, ArrayList<Genero> generos, int totalCapitulos) {
+    public Obra(String titulo, TipoObra tipo, Autor autor,int totalCapitulos) {
         this.titulo = titulo;
         this.tipo = tipo;
         this.autor = autor;
-        this.generos = generos;
         this.totalCapitulos = totalCapitulos;
     }
 
