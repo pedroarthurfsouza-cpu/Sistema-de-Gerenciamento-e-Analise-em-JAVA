@@ -54,30 +54,31 @@ public class Usuario {
         /* 
         Se progressos estiver vazia, os laços não rodam e o método devolve "" (texto vazio). 
         Quem chamar o método vai precisar tratar isso
-        */
-
+         */
         String melhorGenero = "";
         int maiorContagem = 0;
 
         HashMap<String, Integer> contagem = new HashMap<>();
 
         for (int i = 0; i < progressos.size(); i++) {
+            if (progressos.get(i).getStatus() == StatusLeitura.CONCLUIDO) {
 
-            for (int j = 0; j < progressos.get(i).getObra().getGeneros().size(); j++) {
+                for (int j = 0; j < progressos.get(i).getObra().getGeneros().size(); j++) {
 
-                Genero generoAtual = progressos.get(i).getObra().getGeneros().get(j);
+                    Genero generoAtual = progressos.get(i).getObra().getGeneros().get(j);
 
-                String nome = generoAtual.getNome();
+                    String nome = generoAtual.getNome();
 
-                if (contagem.get(nome) == null) {
-                    contagem.put(nome, 1);
+                    if (contagem.get(nome) == null) {
+                        contagem.put(nome, 1);
 
-                } else {
-                    contagem.put(nome, contagem.get(nome) + 1);
+                    } else {
+                        contagem.put(nome, contagem.get(nome) + 1);
+                    }
+
                 }
 
             }
-
         }
 
         for (String genero : contagem.keySet()) {
@@ -91,8 +92,6 @@ public class Usuario {
 
         return melhorGenero;
 
-        
-        // Implementação do método para determinar o gênero favorito do usuário
     }
 
 }
