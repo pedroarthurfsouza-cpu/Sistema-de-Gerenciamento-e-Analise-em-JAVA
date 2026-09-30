@@ -33,6 +33,20 @@
   </dependencies>
 
   <build>
+    <plugins>
+      <!-- este bloco é o que de fato ATIVA o plugin na build.
+           por isso o exec-maven-plugin saiu de dentro de pluginManagement
+           e passou a existir aqui também. -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <mainClass>mangalog.app.Main</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
@@ -44,14 +58,6 @@
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>exec-maven-plugin</artifactId>
-          <version>3.1.0</version>
-          <configuration>
-            <mainClass>mangalog.app.Main</mainClass>
-            </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
