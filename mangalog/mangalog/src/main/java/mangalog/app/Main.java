@@ -75,6 +75,9 @@ public class Main {
                 case 7:
                     atualizarProgresso(catalogo, usuario, scanner);
                     break;
+                case 8:
+                    importarObras(catalogo, repositorio, scanner);
+                    break;
                 case 0:
                     System.out.println("Ate mais!");
                     break;
