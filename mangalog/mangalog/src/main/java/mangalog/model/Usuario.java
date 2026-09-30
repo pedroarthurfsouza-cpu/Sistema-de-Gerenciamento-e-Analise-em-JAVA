@@ -50,48 +50,38 @@ public class Usuario {
     }
 
     public String generoFavorito() {
-
-        /* 
-        Se progressos estiver vazia, os laços não rodam e o método devolve "" (texto vazio). 
-        Quem chamar o método vai precisar tratar isso
-         */
         String melhorGenero = "";
         int maiorContagem = 0;
 
         HashMap<String, Integer> contagem = new HashMap<>();
 
-        for (int i = 0; i < progressos.size(); i++) {
-            if (progressos.get(i).getStatus() == StatusLeitura.CONCLUIDO) {
-
-                for (int j = 0; j < progressos.get(i).getObra().getGeneros().size(); j++) {
-
-                    Genero generoAtual = progressos.get(i).getObra().getGeneros().get(j);
-
-                    String nome = generoAtual.getNome();
-
-                    if (contagem.get(nome) == null) {
-                        contagem.put(nome, 1);
-
-                    } else {
-                        contagem.put(nome, contagem.get(nome) + 1);
-                    }
-
+        for (int i = 0; i < avaliacoes.size(); i++) {
+            Avaliacao a = avaliacoes.get(i);
+            if (a.getNota() >= 4) {
+                ArrayList<Genero> generos = a.getObra().getGeneros();
+                for (int j = 0; j < generos.size(); j++) {
+                    String nome = generos.get(j).getNome();
+                    contagem.put(nome, contagem.getOrDefault(nome, 0) + 1);
                 }
-
             }
         }
 
         for (String genero : contagem.keySet()) {
-
             if (contagem.get(genero) > maiorContagem) {
                 maiorContagem = contagem.get(genero);
                 melhorGenero = genero;
             }
-
         }
 
         return melhorGenero;
+    }
 
+    public void avaliarObra(Obra obra, int nota, String comentario) {
+        avaliacoes.removeIf(a -> a.getObra() == obra);
+        Avaliacao nova = new Avaliacao(nota, obra);
+        nova.setComentario(comentario);
+        avaliacoes.add(nova);
+        obra.adicionarAvaliacao(nova);
     }
 
 }

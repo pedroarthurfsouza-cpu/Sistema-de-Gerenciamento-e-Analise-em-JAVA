@@ -1,14 +1,6 @@
-<<<<<<< HEAD
-# Java
 *.class
-
-# Maven
 target/
-
-# IDE
+dados/
 .vscode/
 .idea/
-=======
-target/
-*.class
->>>>>>> origin/model
+.DS_Store
