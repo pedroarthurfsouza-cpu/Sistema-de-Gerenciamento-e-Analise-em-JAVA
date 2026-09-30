@@ -38,6 +38,8 @@ public class Main {
             System.out.println("5 - Sugestao de proxima obra");
             System.out.println("6 - Avaliar uma obra");
             System.out.println("7 - Atualizar progresso de leitura");
+            System.out.println("8 - Importar obras");
+            System.out.println("9 - Buscar/listar catálogo");
             System.out.println("0 - Sair");
             System.out.print("Escolha: ");
 
