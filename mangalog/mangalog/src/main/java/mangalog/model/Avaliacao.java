@@ -10,11 +10,9 @@ public class Avaliacao {
     private LocalDate data;
 
     public Avaliacao(int nota, Obra obra) {
-        if (nota < 1 || nota > 5) {
-            throw new IllegalArgumentException("Nota deve ser entre 1 e 5");
-        }
+       
         this.data = LocalDate.now();
-        this.nota = nota;
+        this.setNota(nota);
         this.obra = obra;
     }
 
@@ -31,6 +29,9 @@ public class Avaliacao {
     }
 
     public void setNota(int nota) {
+         if (nota < 1 || nota > 5) {
+            throw new IllegalArgumentException("Nota deve ser entre 1 e 5");
+        }
         this.nota = nota;
     }
 

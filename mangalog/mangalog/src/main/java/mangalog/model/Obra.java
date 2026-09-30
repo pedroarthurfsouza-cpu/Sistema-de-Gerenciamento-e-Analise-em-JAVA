@@ -12,11 +12,10 @@ public class Obra {
     private String idExterno;
     private ArrayList<Avaliacao> avaliacoes = new ArrayList<>();
 
-    public Obra(String titulo, TipoObra tipo, Autor autor, ArrayList<Genero> generos, int totalCapitulos) {
+    public Obra(String titulo, TipoObra tipo, Autor autor,int totalCapitulos) {
         this.titulo = titulo;
         this.tipo = tipo;
         this.autor = autor;
-        this.generos = generos;
         this.totalCapitulos = totalCapitulos;
     }
 
@@ -84,4 +83,29 @@ public class Obra {
         this.avaliacoes = avaliacoes;
     }
 
+    public double calcularNotaMedia(){
+
+        if (avaliacoes.size() > 0) {
+            double somaNotas = 0;
+            for (int i = 0; i < avaliacoes.size(); i++){
+
+                somaNotas += avaliacoes.get(i).getNota();
+            }
+            return somaNotas / avaliacoes.size();
+        }else{
+            //vou deixar sem nenhum print, no APP vai ter que ter um println("Não há avaliações para essa obra");
+            return 0;
+            
+        }
+    }
+
+
+    public void adicionarAvaliacao(Avaliacao avaliacao) {
+        if(this.avaliacoes.isEmpty()){
+            this.avaliacoes.add(avaliacao);
+
+        }else{
+           avaliacoes.set(0, avaliacao);
+        }
+    }
 }

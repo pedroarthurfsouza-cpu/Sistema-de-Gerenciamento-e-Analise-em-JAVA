@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Java
 *.class
 
@@ -7,3 +8,7 @@ target/
 # IDE
 .vscode/
 .idea/
+=======
+target/
+*.class
+>>>>>>> origin/model
