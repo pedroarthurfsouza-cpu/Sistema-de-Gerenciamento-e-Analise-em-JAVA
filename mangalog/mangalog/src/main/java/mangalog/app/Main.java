@@ -1,23 +1,18 @@
 package mangalog.app;
 
-import java.util.ArrayList;
-import mangalog.api.JikanClient;
-import mangalog.model.Genero;
-import mangalog.model.Obra;
-import mangalog.persistencia.RepositorioJson;
-
-public class Main {
-    public static void main(String[] args) {
-        RepositorioJson repositorio = new RepositorioJson("dados/catalogo.json");
-
-        try {
-            ArrayList<Obra> obras = repositorio.carregarCatalogo();
-            System.out.println("Carregou " + obras.size() + " obras do arquivo.");
-            for (Obra o : obras) {
-                System.out.println("- " + o.getTitulo() + " (" + o.getTipo() + ")");
-            }
-        } catch (Exception e) {
-            System.out.println("Erro ao carregar: " + e.getMessage());
-        }
+public class Main { public static void main(String[] args) {
+        
+case 1:
+    relatorioService.notaMediaGeral(catalogo);
+case 2:
+    relatorioService.rankingTopN(catalogo, 3);
+case 3:
+    relatorioService.obraComMaiorNota(catalogo);
+    relatorioService.obraComMenorNota(catalogo);
+case 4:
+    relatorioService.totalCapitulosLidos(usuario);
+case 5:
+    recomendacaoService.sugerirProximaObra(usuario, catalogo);
+        
     }
 }
