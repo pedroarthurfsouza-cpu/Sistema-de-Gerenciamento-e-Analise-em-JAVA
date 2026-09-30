@@ -263,10 +263,45 @@ public class Main {
                     novasObras.size() + " obras importadas com sucesso."
             );
     
-        } catch (Exception e) {
-            System.out.println(
-                    "Nao foi possivel importar obras: " + e.getMessage()
-            );
+            } catch (Exception e) {
+                System.out.println(
+                        "Nao foi possivel importar obras: " + e.getMessage()
+                );
+            }
+    }
+
+    private static void buscarNoCatalogo(
+        ArrayList<Obra> catalogo,
+        Scanner scanner) {
+
+        if (catalogo.isEmpty()) {
+            System.out.println("O catalogo esta vazio.");
+            return;
+        }
+    
+        System.out.println("\n--- BUSCAR NO CATALOGO ---");
+        System.out.println("1 - Buscar por titulo");
+        System.out.println("2 - Buscar por genero");
+        System.out.println("3 - Listar todas as obras");
+        System.out.print("Escolha: ");
+    
+        int opcao = lerOpcao(scanner);
+    
+        switch (opcao) {
+            case 1:
+                buscarPorTitulo(catalogo, scanner);
+                break;
+    
+            case 2:
+                buscarPorGenero(catalogo, scanner);
+                break;
+    
+            case 3:
+                listarCatalogo(catalogo);
+                break;
+    
+            default:
+                System.out.println("Opcao invalida.");
         }
     }
     
