@@ -239,7 +239,20 @@ public class Main {
                 return;
             }
     
-            catalogo.addAll(novasObras);
+        for (Obra novaObra : novasObras) {
+            boolean jaExiste = false;
+        
+            for (Obra obra : catalogo) {
+                if (obra.getTitulo().equalsIgnoreCase(novaObra.getTitulo())) {
+                    jaExiste = true;
+                    break;
+                    }
+                }
+        
+            if (!jaExiste) {
+                catalogo.add(novaObra);
+                }
+            }
     
             repositorio.salvarCatalogo(catalogo);
     
