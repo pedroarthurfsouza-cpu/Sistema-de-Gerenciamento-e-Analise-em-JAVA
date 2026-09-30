@@ -304,5 +304,28 @@ public class Main {
                 System.out.println("Opcao invalida.");
         }
     }
+
+    private static void buscarPorTitulo(
+        ArrayList<Obra> catalogo,
+        Scanner scanner) {
+
+        System.out.print("Digite o titulo: ");
+        String termo = scanner.nextLine().trim().toLowerCase();
+    
+        boolean encontrou = false;
+    
+        for (Obra obra : catalogo) {
+            if (obra.getTitulo().toLowerCase().contains(termo)) {
+                System.out.println("- " + obra.getTitulo());
+                encontrou = true;
+            }
+        }
+    
+        if (!encontrou) {
+            System.out.println("Nenhuma obra encontrada.");
+        }
+    }
+
+    
     
 }
