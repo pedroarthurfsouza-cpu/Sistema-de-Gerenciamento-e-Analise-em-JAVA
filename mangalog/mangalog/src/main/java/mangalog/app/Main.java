@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import mangalog.api.JikanClient;
 import mangalog.model.Avaliacao;
+import mangalog.model.Genero;
 import mangalog.model.Obra;
 import mangalog.model.ProgressoDeLeitura;
 import mangalog.model.Usuario;
