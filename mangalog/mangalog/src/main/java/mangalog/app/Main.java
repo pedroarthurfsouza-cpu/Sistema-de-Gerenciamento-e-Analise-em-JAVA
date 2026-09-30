@@ -335,6 +335,30 @@ public class Main {
         }
     }
 
+    private static void buscarPorGenero(
+        ArrayList<Obra> catalogo,
+        Scanner scanner) {
+
+        System.out.print("Digite o genero: ");
+        String termo = scanner.nextLine().trim().toLowerCase();
     
+        boolean encontrou = false;
+    
+        for (Obra obra : catalogo) {
+    
+            for (Genero genero : obra.getGeneros()) {
+    
+                if (genero.toString().toLowerCase().contains(termo)) {
+                    System.out.println("- " + obra.getTitulo());
+                    encontrou = true;
+                    break;
+                }
+            }
+        }
+    
+        if (!encontrou) {
+            System.out.println("Nenhuma obra encontrada.");
+        }
+    }
     
 }
