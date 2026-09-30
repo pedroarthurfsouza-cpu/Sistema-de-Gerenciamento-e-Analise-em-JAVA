@@ -78,6 +78,9 @@ public class Main {
                 case 8:
                     importarObras(catalogo, repositorio, scanner);
                     break;
+                case 9:
+                    buscarNoCatalogo(catalogo, scanner);
+                    break;
                 case 0:
                     System.out.println("Ate mais!");
                     break;
