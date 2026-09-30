@@ -219,4 +219,39 @@ public class Main {
         catalogo.add(obra);
         return catalogo;
     }
+
+    private static void importarObras(
+        ArrayList<Obra> catalogo,
+        RepositorioJson repositorio,
+        Scanner scanner) {
+
+        System.out.print("Digite um termo de busca: ");
+        String termo = scanner.nextLine().trim();
+    
+        try {
+            JikanClient jikanClient = new JikanClient();
+    
+            ArrayList<Obra> novasObras =
+                    jikanClient.buscarObras(termo, null);
+    
+            if (novasObras.isEmpty()) {
+                System.out.println("Nenhuma obra encontrada.");
+                return;
+            }
+    
+            catalogo.addAll(novasObras);
+    
+            repositorio.salvarCatalogo(catalogo);
+    
+            System.out.println(
+                    novasObras.size() + " obras importadas com sucesso."
+            );
+    
+        } catch (Exception e) {
+            System.out.println(
+                    "Nao foi possivel importar obras: " + e.getMessage()
+            );
+        }
+    }
+    
 }
