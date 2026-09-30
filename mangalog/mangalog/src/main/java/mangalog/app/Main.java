@@ -82,7 +82,8 @@ public class Main {
                     buscarNoCatalogo(catalogo, scanner);
                     break;
                 case 0:
-                    System.out.println("Ate mais!");
+                    repositorio.salvarCatalogo(catalogo);
+                    System.out.println("Catalogo salvo. Ate mais!");
                     break;
                 default:
                     System.out.println("Opcao invalida.");
