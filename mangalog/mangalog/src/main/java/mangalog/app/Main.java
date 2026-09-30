@@ -326,6 +326,15 @@ public class Main {
         }
     }
 
+    private static void listarCatalogo(ArrayList<Obra> catalogo) {
+
+        System.out.println("\n--- CATALOGO ---");
+    
+        for (int i = 0; i < catalogo.size(); i++) {
+            System.out.println((i + 1) + ". " + catalogo.get(i).getTitulo());
+        }
+    }
+
     
     
 }
