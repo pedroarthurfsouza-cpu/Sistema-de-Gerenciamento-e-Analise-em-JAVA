@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Avaliacao {
 
-    private Obra obra;
+    private transient Obra obra;
     private int nota;
     private String comentario;
     private LocalDate data;

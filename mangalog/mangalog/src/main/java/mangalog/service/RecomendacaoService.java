@@ -1,8 +1,6 @@
 package mangalog.service;
 
 import java.util.ArrayList;
-
-import mangalog.model.Avaliacao;
 import mangalog.model.Genero;
 import mangalog.model.Obra;
 import mangalog.model.ProgressoDeLeitura;

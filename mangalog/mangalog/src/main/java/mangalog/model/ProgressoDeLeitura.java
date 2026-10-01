@@ -29,20 +29,17 @@ public class ProgressoDeLeitura {
         return capituloAtual;
     }
 
-        public void setCapituloAtual(int capituloAtual) {
-            if (capituloAtual < 0 || capituloAtual > obra.getTotalCapitulos()) {
-                throw new IllegalArgumentException("Capítulo atual inválido.");
-
-            }   
-            
-            this.capituloAtual = capituloAtual;
-
-            if (capituloAtual == obra.getTotalCapitulos()) {
-                this.status = StatusLeitura.CONCLUIDO;
-                this.dataFim = LocalDate.now();
-
-            }
+    public void setCapituloAtual(int capituloAtual) {
+        boolean totalConhecido = obra.getTotalCapitulos() > 0;
+        if (capituloAtual < 0 || (totalConhecido && capituloAtual > obra.getTotalCapitulos())) {
+            throw new IllegalArgumentException("Capítulo atual inválido.");
         }
+        this.capituloAtual = capituloAtual;
+        if (totalConhecido && capituloAtual == obra.getTotalCapitulos()) {
+            this.status = StatusLeitura.CONCLUIDO;
+            this.dataFim = LocalDate.now();
+        }
+    }
 
     public StatusLeitura getStatus() {
         return status;
