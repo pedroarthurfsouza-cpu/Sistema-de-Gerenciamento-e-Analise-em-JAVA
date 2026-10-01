@@ -18,7 +18,7 @@ import mangalog.model.TipoObra;
 public class JikanClient {
 
     public String buscarBruto(String termo, String tipo) throws Exception {
-        HttpClient client = HttpClient.newHttpClient();
+        HttpClient client = HttpClient.newHttpClient(); // Cria um Client HTTP, para acessar a api
 
         String termoCodificado = URLEncoder.encode(termo, StandardCharsets.UTF_8);
         String url = "https://api.tenrai.org/v1/manga?q=" + termoCodificado;
