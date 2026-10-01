@@ -13,10 +13,30 @@ public class Obra {
     private ArrayList<Avaliacao> avaliacoes = new ArrayList<>();
 
     public Obra(String titulo, TipoObra tipo, Autor autor,int totalCapitulos) {
-        this.titulo = titulo;
-        this.tipo = tipo;
+
+        if (totalCapitulos < 0) {
+            throw new IllegalArgumentException("O total de capítulos não pode ser negativo.");
+        } else{
+             this.totalCapitulos = totalCapitulos;
+        }
+
+        if(titulo == null || titulo.isEmpty()){
+            throw new IllegalArgumentException("O título não pode ser nulo ou vazio.");
+        }else{
+            this.titulo = titulo;
+        }
+
+        if(tipo == null){
+            throw new IllegalArgumentException("O tipo da obra não pode ser nulo.");
+        }else{
+            this.tipo = tipo;
+        }
+        
+        if(autor == null){
+            throw new IllegalArgumentException("O autor da obra não pode ser nulo.");
+        }else{
         this.autor = autor;
-        this.totalCapitulos = totalCapitulos;
+        }
     }
 
     public String getTitulo() {
@@ -48,6 +68,9 @@ public class Obra {
     }
 
     public void setGeneros(ArrayList<Genero> generos) {
+        if (generos == null) {
+            throw new IllegalArgumentException("A lista de gêneros não pode ser nula.");
+        }
         this.generos = generos;
     }
 
@@ -85,7 +108,7 @@ public class Obra {
 
     public double calcularNotaMedia(){
 
-        if (avaliacoes.size() > 0) {
+        if (avaliacoes.size() > 0){
             double somaNotas = 0;
             for (int i = 0; i < avaliacoes.size(); i++){
 
