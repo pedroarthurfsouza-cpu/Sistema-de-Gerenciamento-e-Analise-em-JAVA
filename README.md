@@ -91,37 +91,22 @@ Durante o desenvolvimento, o projeto permite colocar em prática conceitos impor
 
 ## 👥 Equipe de desenvolvimento
 
-Projeto desenvolvido colaborativamente por estudantes de Ciência da Computação do CESUPA.
-
 <p align="center">
-  <a href="https://github.com/pedroarthurfsouza-cpu">
-    <img src="https://github.com/pedroarthurfsouza-cpu.png" width="120px" alt="Pedro Arthur Souza"/>
-    <br />
-    <strong>Pedro Arthur Souza</strong>
-  </a>
-  <br />
-  Desenvolvedor
+  <a href="https://github.com/pedroarthurfsouza-cpu"><strong>Pedro Arthur Souza</strong></a>
+  &nbsp; • &nbsp;
+  <a href="https://github.com/LuizFelipeAR"><strong>Luiz Felipe Reis</strong></a>
+  &nbsp; • &nbsp;
+  <a href="https://github.com/RicardoKenjiHidakaReis"><strong>Ricardo Kenji Hidaka</strong></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/LuizFelipeAR">
-    <img src="https://github.com/LuizFelipeAR.png" width="120px" alt="Luiz Felipe Reis"/>
-    <br />
-    <strong>Luiz Felipe Reis</strong>
-  </a>
-  <br />
-  Desenvolvedor
+  <a href="https://github.com/pedroarthurfsouza-cpu">GitHub</a>
+  &nbsp; | &nbsp;
+  <a href="https://github.com/LuizFelipeAR">GitHub</a>
+  &nbsp; | &nbsp;
+  <a href="https://github.com/RicardoKenjiHidakaReis">GitHub</a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/RicardoKenjiHidakaReis">
-    <img src="https://github.com/RicardoKenjiHidakaReis.png" width="120px" alt="Ricardo Kenji Hidaka"/>
-    <br />
-    <strong>Ricardo Kenji Hidaka</strong>
-  </a>
-  <br />
-  Desenvolvedor
-</p>
 
 ## 📌 Status do projeto
 
