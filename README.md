@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  Uma aplicação desenvolvida em Java que integra dados de uma API externa para oferecer recursos de gerenciamento e acompanhamento de leituras.
+  Uma aplicação desenvolvida em Java que se alimenta de dados de uma API externa para oferecer recursos de gerenciamento e acompanhamento de leituras.
 </p>
 
 <p align="center">
@@ -17,23 +17,46 @@
 
 ---
 
-## 📖 Sobre o projeto
+##  Sobre o projeto
 
-O **Sistema de Gerenciamento e Análise de Mangás** é um projeto acadêmico desenvolvido em Java, com o objetivo de facilitar a organização e o acompanhamento de leituras.
+O **Sistema de Gerenciamento e Análise de Mangás** é um projeto acadêmico da matéria de **Programação Orientada a Objetos**, ministrada pelo digníssimo **doutor Isaac Elgrably**, desenvolvido em Java, com o objetivo de facilitar a organização e o acompanhamento de leituras.
 
 Inspirado em plataformas de catalogação de obras, o sistema utiliza uma API externa para obter informações sobre mangás e combina esses dados com funcionalidades de gerenciamento, permitindo que o usuário organize sua própria experiência de leitura.
 
 Atualmente, a aplicação funciona por meio de uma interface de terminal. O projeto está em constante desenvolvimento, com foco na ampliação da base de dados, no aprimoramento das funcionalidades existentes e na evolução da experiência de uso.
 
-## ✨ Funcionalidades
+## Funcionalidades
 
-*  **Consulta de mangás:** obtenção de informações por meio de uma API externa.
-*  **Gerenciamento de leituras:** organização dos mangás em diferentes listas.
-*  **Favoritos:** seleção e organização de obras favoritas.
-*  **Acompanhamento de leitura:** separação entre mangás lidos e em leitura.
-*  **Gerenciamento e análise:** recursos para organizar as informações da biblioteca pessoal.
+| Funcionalidade            | Descrição                                            |
+| ------------------------- | ---------------------------------------------------- |
+| Consulta de mangás        | Obtenção de informações por meio de uma API externa. |
+| Gerenciamento de leituras | Organização dos mangás em diferentes listas.         |
+| Favoritos                 | Seleção e organização de obras favoritas.            |
+| Acompanhamento de leitura | Separação entre mangás lidos e em leitura.           |
+| Análise                   | Organização das informações da biblioteca pessoal.   |
 
-## 🛠️ Tecnologias utilizadas
+
+## Demonstração
+
+### Menu principal
+
+<!-- Adicione aqui uma captura de tela do menu principal. -->
+
+![Menu principal do sistema](docs/images/menu-principal.png)
+
+### Consulta de mangás
+
+<!-- Adicione aqui uma captura de tela de uma consulta realizada pela API. -->
+
+![Consulta de mangás](docs/images/consulta-mangas.png)
+
+### Gerenciamento de leituras
+
+<!-- Adicione aqui uma captura de tela das listas de leitura. -->
+
+![Gerenciamento de leituras](docs/images/gerenciamento-leituras.png)
+
+##  Tecnologias utilizadas
 
 <p>
   <img src="https://img.shields.io/badge/Java-Linguagem%20principal-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java"/>
@@ -46,7 +69,7 @@ Atualmente, a aplicação funciona por meio de uma interface de terminal. O proj
 * **API externa:** consulta de informações sobre mangás.
 * **Git e GitHub:** versionamento do código-fonte e colaboração entre os integrantes.
 
-## 🚀 Como executar
+##  Como executar
 
 ### Pré-requisitos
 
@@ -72,7 +95,7 @@ cd Sistema-de-Gerenciamento-e-Analise-em-JAVA
 
 > Os procedimentos de execução podem variar conforme a estrutura do projeto e as dependências utilizadas.
 
-## 🗺️ Próximos passos
+##  Próximos passos
 
 * [ ] Ampliar e enriquecer os dados disponíveis sobre os mangás.
 * [ ] Aprimorar a interface e a experiência de uso no terminal.
@@ -89,17 +112,16 @@ Durante o desenvolvimento, o projeto permite colocar em prática conceitos impor
 * Organização e manutenção de código.
 * Versionamento com Git e desenvolvimento colaborativo.
 
-## 👥 Equipe de desenvolvimento
+## Equipe de desenvolvimento
 
-<p align="center">
-  <a href="https://github.com/pedroarthurfsouza-cpu"><strong>Pedro Arthur Souza</strong></a>
-  &nbsp; • &nbsp;
-  <a href="https://github.com/LuizFelipeAR"><strong>Luiz Felipe Reis</strong></a>
-  &nbsp; • &nbsp;
-  <a href="https://github.com/RicardoKenjiHidakaReis"><strong>Ricardo Kenji Hidaka</strong></a>
-</p>
+| Integrante           | GitHub                                                               |
+| -------------------- | -------------------------------------------------------------------- |
+| Pedro Arthur Souza   | [@pedroarthurfsouza-cpu](https://github.com/pedroarthurfsouza-cpu)   |
+| Luiz Felipe Reis     | [@LuizFelipeAR](https://github.com/LuizFelipeAR)                     |
+| Ricardo Kenji Hidaka | [@RicardoKenjiHidakaReis](https://github.com/RicardoKenjiHidakaReis) |
 
-## 📌 Status do projeto
+
+##  Status do projeto
 
 **Em desenvolvimento.**
 
