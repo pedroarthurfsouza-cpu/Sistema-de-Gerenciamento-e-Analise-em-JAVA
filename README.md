@@ -89,11 +89,39 @@ Durante o desenvolvimento, o projeto permite colocar em prática conceitos impor
 * Organização e manutenção de código.
 * Versionamento com Git e desenvolvimento colaborativo.
 
-## 👥 Equipe
+## 👥 Equipe de desenvolvimento
 
-Projeto desenvolvido em equipe por estudantes de Ciência da Computação do CESUPA.
+Projeto desenvolvido colaborativamente por estudantes de Ciência da Computação do CESUPA.
 
-<!-- Adicione os integrantes e seus respectivos perfis do GitHub. -->
+<p align="center">
+  <a href="https://github.com/pedroarthurfsouza-cpu">
+    <img src="https://github.com/pedroarthurfsouza-cpu.png" width="120px" alt="Pedro Arthur Souza"/>
+    <br />
+    <strong>Pedro Arthur Souza</strong>
+  </a>
+  <br />
+  Desenvolvedor
+</p>
+
+<p align="center">
+  <a href="https://github.com/LuizFelipeAR">
+    <img src="https://github.com/LuizFelipeAR.png" width="120px" alt="Luiz Felipe Reis"/>
+    <br />
+    <strong>Luiz Felipe Reis</strong>
+  </a>
+  <br />
+  Desenvolvedor
+</p>
+
+<p align="center">
+  <a href="https://github.com/RicardoKenjiHidakaReis">
+    <img src="https://github.com/RicardoKenjiHidakaReis.png" width="120px" alt="Ricardo Kenji Hidaka"/>
+    <br />
+    <strong>Ricardo Kenji Hidaka</strong>
+  </a>
+  <br />
+  Desenvolvedor
+</p>
 
 ## 📌 Status do projeto
 
