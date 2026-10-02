@@ -99,15 +99,6 @@ Durante o desenvolvimento, o projeto permite colocar em prática conceitos impor
   <a href="https://github.com/RicardoKenjiHidakaReis"><strong>Ricardo Kenji Hidaka</strong></a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/pedroarthurfsouza-cpu">GitHub</a>
-  &nbsp; | &nbsp;
-  <a href="https://github.com/LuizFelipeAR">GitHub</a>
-  &nbsp; | &nbsp;
-  <a href="https://github.com/RicardoKenjiHidakaReis">GitHub</a>
-</p>
-
-
 ## 📌 Status do projeto
 
 **Em desenvolvimento.**
