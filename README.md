@@ -27,11 +27,11 @@ Atualmente, a aplicação funciona por meio de uma interface de terminal. O proj
 
 ## ✨ Funcionalidades
 
-* 🔎 **Consulta de mangás:** obtenção de informações por meio de uma API externa.
-* 📚 **Gerenciamento de leituras:** organização dos mangás em diferentes listas.
-* ❤️ **Favoritos:** seleção e organização de obras favoritas.
-* 📖 **Acompanhamento de leitura:** separação entre mangás lidos e em leitura.
-* 📊 **Gerenciamento e análise:** recursos para organizar as informações da biblioteca pessoal.
+*  **Consulta de mangás:** obtenção de informações por meio de uma API externa.
+*  **Gerenciamento de leituras:** organização dos mangás em diferentes listas.
+*  **Favoritos:** seleção e organização de obras favoritas.
+*  **Acompanhamento de leitura:** separação entre mangás lidos e em leitura.
+*  **Gerenciamento e análise:** recursos para organizar as informações da biblioteca pessoal.
 
 ## 🛠️ Tecnologias utilizadas
 
@@ -108,5 +108,5 @@ A aplicação já conta com funcionalidades operacionais e integração com uma 
 ---
 
 <p align="center">
-  Feito com ☕, Java e dedicação.
+  Feito com ☕, Java, dedicação e amor :)
 </p>
