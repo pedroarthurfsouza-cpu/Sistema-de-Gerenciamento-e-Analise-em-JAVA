@@ -127,6 +127,16 @@ Durante o desenvolvimento, o projeto permite colocar em prática conceitos impor
 
 A aplicação já conta com funcionalidades operacionais e integração com uma API externa. As próximas etapas estão voltadas à expansão dos dados, ao refinamento da experiência de uso e à possível implementação de uma interface gráfica.
 
+## Uso de IA
+
+As ferramentas de inteligência artificial foram utilizadas como apoio durante o desenvolvimento do projeto, auxiliando na implementação, documentação e organização do código. As sugestões geradas foram avaliadas pela equipe antes de serem incorporadas ao projeto.
+
+| Ferramenta | Objetivo              | Resumo do uso                                                                                                                       | Revisão pelo Dev                                                                                                    |
+| ---------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| ChatGPT    | Documentação e README | Auxílio na estruturação, formatação e redação inicial do README.md, incluindo a organização das seções e a apresentação do projeto. | Revisão do conteúdo pela equipe, com ajustes na descrição, formatação e adequação às funcionalidades implementadas. |
+
+**Importante:** o uso de IA foi complementar ao desenvolvimento, cabendo à equipe a análise, validação e responsabilidade pelo conteúdo final do projeto.
+
 ---
 
 <p align="center">
