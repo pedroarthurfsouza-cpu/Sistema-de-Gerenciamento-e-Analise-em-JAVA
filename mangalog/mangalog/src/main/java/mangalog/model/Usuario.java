@@ -55,12 +55,10 @@ public class Usuario {
 
         HashMap<String, Integer> contagem = new HashMap<>();
 
-        for (int i = 0; i < avaliacoes.size(); i++) {
-            Avaliacao a = avaliacoes.get(i);
-            if (a.getNota() >= 4) {
-                ArrayList<Genero> generos = a.getObra().getGeneros();
-                for (int j = 0; j < generos.size(); j++) {
-                    String nome = generos.get(j).getNome();
+        for (Avaliacao avaliacao : avaliacoes) {
+            if (avaliacao.getNota() >= 4) {
+                for (Genero genero : avaliacao.getObra().getGeneros()) {
+                    String nome = genero.getNome();
                     contagem.put(nome, contagem.getOrDefault(nome, 0) + 1);
                 }
             }

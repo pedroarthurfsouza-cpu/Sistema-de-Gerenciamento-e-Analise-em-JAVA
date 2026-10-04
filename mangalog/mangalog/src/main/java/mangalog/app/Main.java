@@ -112,11 +112,7 @@ public class Main {
         scanner.close();
     }
 
-    // Tenta carregar o catalogo salvo. Se nao existir nada salvo (primeira
-    // execucao), pergunta um termo e importa da Jikan API, depois salva pra
-    // nao precisar buscar de novo da proxima vez (o app deve rodar offline
-    // na apresentacao). Se a importacao falhar (sem internet, API fora do ar),
-    // cai pra um catalogo de teste pra nao travar a demonstracao.
+    // Carrega o catálogo salvo ou importa dados da API; usa dados de teste se a API falhar.
     private static ArrayList<Obra> carregarOuImportarCatalogo(RepositorioJson repositorio, Scanner scanner) {
         ArrayList<Obra> catalogo;
         try {
@@ -151,7 +147,7 @@ public class Main {
         return catalogo;
     }
 
-    // Le a opcao do usuario e devolve -1 se ele digitar algo que nao e numero
+    // Retorna -1 quando a entrada não é um número.
     private static int lerOpcao(Scanner scanner) {
         try {
             return Integer.parseInt(scanner.nextLine().trim());
@@ -160,8 +156,7 @@ public class Main {
         }
     }
 
-    // Mostra o catalogo numerado e devolve a Obra escolhida, ou null se a
-    // escolha for invalida ou o catalogo estiver vazio.
+    // Mostra o catálogo e retorna a obra escolhida, ou null se a escolha for inválida.
     private static Obra escolherObra(ArrayList<Obra> catalogo, Scanner scanner) {
         if (catalogo.isEmpty()) {
             System.out.println("O catalogo esta vazio.");
@@ -224,18 +219,17 @@ public class Main {
         }
     }
 
-    // Acha o progresso que o usuario ja tem pra essa obra, se existir
+    // Procura o progresso de leitura da obra.
     private static ProgressoDeLeitura buscarProgresso(Usuario usuario, Obra obra) {
-        ArrayList<ProgressoDeLeitura> progressos = usuario.getProgressos();
-        for (int i = 0; i < progressos.size(); i++) {
-            if (progressos.get(i).getObra() == obra) {
-                return progressos.get(i);
+        for (ProgressoDeLeitura progresso : usuario.getProgressos()) {
+            if (progresso.getObra() == obra) {
+                return progresso;
             }
         }
         return null;
     }
 
-    // So usado se a importacao da Jikan falhar, pra nao travar a demonstracao
+    // Evita iniciar sem catálogo quando a API estiver indisponível.
     private static ArrayList<Obra> criarCatalogoDeTesteFallback() {
         ArrayList<Obra> catalogo = new ArrayList<>();
         Obra obra = new Obra("Obra de Teste (fallback offline)", mangalog.model.TipoObra.OUTRO,
@@ -369,7 +363,6 @@ public class Main {
         for (Obra obra : catalogo) {
 
             for (Genero genero : obra.getGeneros()) {
-
                 if (genero.getNome().toLowerCase().contains(termo)) {
                     System.out.println("- " + obra.getTitulo());
                     encontrou = true;
@@ -419,17 +412,16 @@ public class Main {
             return;
         }
 
-        for (int i = 0; i < listas.size(); i++) {
-            ListaDeLeitura lista = listas.get(i);
+        for (ListaDeLeitura lista : listas) {
             ArrayList<Obra> obras = lista.getObras();
             System.out.println(lista.getNome() + " (" + obras.size() + " obra(s)):");
-            for (int j = 0; j < obras.size(); j++) {
-                System.out.println("  - " + obras.get(j).getTitulo());
+            for (Obra obra : obras) {
+                System.out.println("  - " + obra.getTitulo());
             }
         }
     }
 
-    // Mostra as listas numeradas e devolve a escolhida, ou null se invalida/vazia
+    // Mostra as listas e retorna a escolhida, ou null se a escolha for inválida.
     private static ListaDeLeitura escolherLista(Usuario usuario, Scanner scanner) {
         ArrayList<ListaDeLeitura> listas = usuario.getListas();
 

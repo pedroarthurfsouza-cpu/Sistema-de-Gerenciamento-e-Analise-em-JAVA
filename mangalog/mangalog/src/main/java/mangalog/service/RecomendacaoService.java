@@ -8,34 +8,32 @@ import mangalog.model.Usuario;
 
 public class RecomendacaoService {
 
-
-    // Sugere a próxima obra: acha o gênero favorito do usuário e procura, no
-    // catálogo, uma obra desse gênero que ele ainda não começou a ler.
+    // Sugere uma obra do gênero favorito que o usuário ainda não começou.
     public Obra sugerirProximaObra(Usuario usuario, ArrayList<Obra> catalogo) {
-    String favorito = usuario.generoFavorito();
-    if (favorito.isEmpty()) {
-        return null;
-    }
-    for (int i = 0; i < catalogo.size(); i++) {
-        Obra obra = catalogo.get(i);
-        if (jaEstaNoProgresso(usuario, obra)) continue;
-        for (Genero g : obra.getGeneros()) {
-            if (g.getNome().equals(favorito)) {
-                return obra;
+        String favorito = usuario.generoFavorito();
+        if (favorito.isEmpty()) {
+            return null;
+        }
+
+        for (Obra obra : catalogo) {
+            if (jaEstaNoProgresso(usuario, obra)) {
+                continue;
+            }
+            for (Genero genero : obra.getGeneros()) {
+                if (genero.getNome().equals(favorito)) {
+                    return obra;
+                }
             }
         }
+        return null;
     }
-    return null;
-}
 
     private boolean jaEstaNoProgresso(Usuario usuario, Obra obra) {
-        ArrayList<ProgressoDeLeitura> progressos = usuario.getProgressos();
-        for (int i = 0; i < progressos.size(); i++) {
-            if (progressos.get(i).getObra() == obra) {
+        for (ProgressoDeLeitura progresso : usuario.getProgressos()) {
+            if (progresso.getObra() == obra) {
                 return true;
             }
         }
         return false;
     }
-    
 }
