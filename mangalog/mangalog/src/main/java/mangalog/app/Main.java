@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import mangalog.api.JikanClient;
 import mangalog.model.Genero;
+import mangalog.model.ListaDeLeitura;
 import mangalog.model.Obra;
 import mangalog.model.ProgressoDeLeitura;
 import mangalog.model.Usuario;
@@ -40,6 +41,9 @@ public class Main {
             System.out.println("7 - Atualizar progresso de leitura");
             System.out.println("8 - Importar obras");
             System.out.println("9 - Buscar/listar catálogo");
+            System.out.println("10 - Criar lista de leitura");
+            System.out.println("11 - Adicionar obra a uma lista");
+            System.out.println("12 - Ver minhas listas");
             System.out.println("0 - Sair");
             System.out.print("Escolha: ");
 
@@ -82,6 +86,15 @@ public class Main {
                     break;
                 case 9:
                     buscarNoCatalogo(catalogo, scanner);
+                    break;
+                case 10:
+                    criarLista(usuario, scanner);
+                    break;
+                case 11:
+                    adicionarObraALista(catalogo, usuario, scanner);
+                    break;
+                case 12:
+                    verListas(usuario);
                     break;
                 case 0:
                     try {
@@ -368,6 +381,74 @@ public class Main {
         if (!encontrou) {
             System.out.println("Nenhuma obra encontrada.");
         }
+    }
+
+    private static void criarLista(Usuario usuario, Scanner scanner) {
+        System.out.print("Nome da nova lista: ");
+        String nome = scanner.nextLine().trim();
+
+        if (nome.isEmpty()) {
+            System.out.println("O nome nao pode ser vazio.");
+            return;
+        }
+
+        usuario.getListas().add(new ListaDeLeitura(nome));
+        System.out.println("Lista \"" + nome + "\" criada.");
+    }
+
+    private static void adicionarObraALista(ArrayList<Obra> catalogo, Usuario usuario, Scanner scanner) {
+        ListaDeLeitura lista = escolherLista(usuario, scanner);
+        if (lista == null) {
+            return;
+        }
+
+        Obra obra = escolherObra(catalogo, scanner);
+        if (obra == null) {
+            return;
+        }
+
+        lista.getObras().add(obra);
+        System.out.println(obra.getTitulo() + " adicionada a lista \"" + lista.getNome() + "\".");
+    }
+
+    private static void verListas(Usuario usuario) {
+        ArrayList<ListaDeLeitura> listas = usuario.getListas();
+
+        if (listas.isEmpty()) {
+            System.out.println("Voce ainda nao tem nenhuma lista. Use a opcao 10 pra criar uma.");
+            return;
+        }
+
+        for (int i = 0; i < listas.size(); i++) {
+            ListaDeLeitura lista = listas.get(i);
+            ArrayList<Obra> obras = lista.getObras();
+            System.out.println(lista.getNome() + " (" + obras.size() + " obra(s)):");
+            for (int j = 0; j < obras.size(); j++) {
+                System.out.println("  - " + obras.get(j).getTitulo());
+            }
+        }
+    }
+
+    // Mostra as listas numeradas e devolve a escolhida, ou null se invalida/vazia
+    private static ListaDeLeitura escolherLista(Usuario usuario, Scanner scanner) {
+        ArrayList<ListaDeLeitura> listas = usuario.getListas();
+
+        if (listas.isEmpty()) {
+            System.out.println("Voce ainda nao tem nenhuma lista. Use a opcao 10 pra criar uma.");
+            return null;
+        }
+
+        for (int i = 0; i < listas.size(); i++) {
+            System.out.println((i + 1) + ". " + listas.get(i).getNome());
+        }
+        System.out.print("Escolha o numero da lista: ");
+        int escolha = lerOpcao(scanner);
+
+        if (escolha < 1 || escolha > listas.size()) {
+            System.out.println("Escolha invalida.");
+            return null;
+        }
+        return listas.get(escolha - 1);
     }
 
 }
