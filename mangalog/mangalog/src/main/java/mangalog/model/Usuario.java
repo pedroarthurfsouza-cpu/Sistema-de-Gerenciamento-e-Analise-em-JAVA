@@ -75,9 +75,9 @@ public class Usuario {
     }
 
     public void avaliarObra(Obra obra, int nota, String comentario) {
-        avaliacoes.removeIf(a -> a.getObra() == obra);
         Avaliacao nova = new Avaliacao(nota, obra);
         nova.setComentario(comentario);
+        avaliacoes.removeIf(a -> a.getObra() == obra);
         avaliacoes.add(nova);
         obra.adicionarAvaliacao(nova);
     }
