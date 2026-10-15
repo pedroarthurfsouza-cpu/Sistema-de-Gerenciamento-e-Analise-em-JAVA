@@ -8,7 +8,6 @@ import mangalog.model.Usuario;
 
 public class RecomendacaoService {
 
-    // Sugere uma obra do gênero favorito que o usuário ainda não começou.
     public Obra sugerirProximaObra(Usuario usuario, ArrayList<Obra> catalogo) {
         String favorito = usuario.generoFavorito();
         if (favorito.isEmpty()) {
