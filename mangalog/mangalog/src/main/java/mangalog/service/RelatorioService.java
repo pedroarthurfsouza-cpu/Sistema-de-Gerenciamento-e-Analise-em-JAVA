@@ -9,12 +9,10 @@ import mangalog.model.Usuario;
 
 public class RelatorioService {
 
-    // Calcula a nota média de uma obra.
     public double notaMedia(Obra obra) {
         return obra.calcularNotaMedia();
     }
 
-    // Nota média geral do catálogo inteiro (média de todas as avaliações de todas as obras)
     public double notaMediaGeral(ArrayList<Obra> catalogo) {
         int somaTotal = 0;
         int quantidadeTotal = 0;
@@ -32,7 +30,6 @@ public class RelatorioService {
         return (double) somaTotal / quantidadeTotal;
     }
 
-    // Top N obras por nota média, da maior pra menor (só entram obras já avaliadas)
     public ArrayList<Obra> rankingTopN(ArrayList<Obra> catalogo, int n) {
         ArrayList<Obra> avaliadas = new ArrayList<>();
         for (Obra obra : catalogo) {
@@ -49,8 +46,6 @@ public class RelatorioService {
         }
         return top;
     }
-
-    // Obra com a maior nota média (null se ninguém avaliou nada ainda)
     public Obra obraComMaiorNota(ArrayList<Obra> catalogo) {
         Obra melhor = null;
         for (Obra atual : catalogo) {
@@ -64,7 +59,6 @@ public class RelatorioService {
         return melhor;
     }
 
-    // Obra com a menor nota média (null se ninguém avaliou nada ainda)
     public Obra obraComMenorNota(ArrayList<Obra> catalogo) {
         Obra pior = null;
         for (Obra atual : catalogo) {
@@ -78,7 +72,6 @@ public class RelatorioService {
         return pior;
     }
 
-    // Soma o progresso do usuário em todas as obras que ele começou a ler
     public int totalCapitulosLidos(Usuario usuario) {
         int total = 0;
         for (ProgressoDeLeitura progresso : usuario.getProgressos()) {
