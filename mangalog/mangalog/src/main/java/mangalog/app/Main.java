@@ -112,7 +112,6 @@ public class Main {
         scanner.close();
     }
 
-    // Carrega o catálogo salvo ou importa dados da API; usa dados de teste se a API falhar.
     private static ArrayList<Obra> carregarOuImportarCatalogo(RepositorioJson repositorio, Scanner scanner) {
         ArrayList<Obra> catalogo;
         try {
@@ -147,7 +146,6 @@ public class Main {
         return catalogo;
     }
 
-    // Retorna -1 quando a entrada não é um número.
     private static int lerOpcao(Scanner scanner) {
         try {
             return Integer.parseInt(scanner.nextLine().trim());
@@ -156,7 +154,6 @@ public class Main {
         }
     }
 
-    // Mostra o catálogo e retorna a obra escolhida, ou null se a escolha for inválida.
     private static Obra escolherObra(ArrayList<Obra> catalogo, Scanner scanner) {
         if (catalogo.isEmpty()) {
             System.out.println("O catalogo esta vazio.");
@@ -219,7 +216,6 @@ public class Main {
         }
     }
 
-    // Procura o progresso de leitura da obra.
     private static ProgressoDeLeitura buscarProgresso(Usuario usuario, Obra obra) {
         for (ProgressoDeLeitura progresso : usuario.getProgressos()) {
             if (progresso.getObra() == obra) {
@@ -229,7 +225,6 @@ public class Main {
         return null;
     }
 
-    // Evita iniciar sem catálogo quando a API estiver indisponível.
     private static ArrayList<Obra> criarCatalogoDeTesteFallback() {
         ArrayList<Obra> catalogo = new ArrayList<>();
         Obra obra = new Obra("Obra de Teste (fallback offline)", mangalog.model.TipoObra.OUTRO,
@@ -421,7 +416,6 @@ public class Main {
         }
     }
 
-    // Mostra as listas e retorna a escolhida, ou null se a escolha for inválida.
     private static ListaDeLeitura escolherLista(Usuario usuario, Scanner scanner) {
         ArrayList<ListaDeLeitura> listas = usuario.getListas();
 
